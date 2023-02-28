@@ -1,0 +1,37 @@
+﻿@using WebApplication11.Models
+@model NorthwindViewModel
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="container mt-5">
+        <table class="table table-hover table-striped table-bordered">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>Price</th>
+                    <th>Quantity Per Unit</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (Product p in Model.Products)
+                {
+                    <tr>
+                        <td>@p.Id</td>
+                        <td>@p.Name</td>
+                        <td>@p.UnitPrice.ToString("C")</td>
+                        <td>@p.QuantityPerUnit</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
